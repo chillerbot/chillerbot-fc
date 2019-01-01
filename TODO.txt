@@ -1,0 +1,9 @@
+#FAKECLIENT
+
+fix SyncID(); command and process
+
+add 1 language vong nicigkeit her erknnen und responeden im style
+
+#PENCLIENT
+
+all done
