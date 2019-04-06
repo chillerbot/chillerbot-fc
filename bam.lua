@@ -1,4 +1,5 @@
-CheckVersion("0.4")
+-- supports bam 0.4 and bam 0.5
+-- CheckVersion("0.4")
 
 Import("configure.lua")
 Import("other/sdl/sdl.lua")
