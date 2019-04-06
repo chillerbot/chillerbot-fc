@@ -1098,11 +1098,14 @@ void CFakeClient::OnMessage(int MsgId, CUnpacker *pUnpacker)
 		}
 		else if ((str_find_nocase(pMsg->m_pMessage, "race") || str_find_nocase(pMsg->m_pMessage, "finish")) && IsQuestion)
 		{
-#if defined CHILLBLOCK5
-			SendChat(0, "Finish is at the right side of the map. So go all the way --> and a little bit up.");
-#elif defined BLMAPCHILL
-			SendChat(0, "At spawn go into the rainbow spawn tele (<----) and then go ---> until you reach the two player parts then go down and then follow the path (<---) agian and then down there is finish.");
-#endif
+			char aBuf[128];
+			str_format(aBuf, sizeof(aBuf), "I don't know the map '%s'", m_aCurrentMap);
+			if (!str_comp(m_aCurrentMap, "ChillBlock5"))
+				SendChat(0, "Finish is at the right side of the map. So go all the way --> and a little bit up.");
+			else if (!str_comp(m_aCurrentMap, "BlmapChill"))
+				SendChat(0, "At spawn go into the rainbow spawn tele (<----) and then go ---> until you reach the two player parts then go down and then follow the path (<---) agian and then down there is finish.");
+			else
+				SendChat(0, aBuf);
 		}
 		else if ((str_find_nocase(pMsg->m_pMessage, "bank")) && IsDoWithQuestion && IsQuestion)
 		{

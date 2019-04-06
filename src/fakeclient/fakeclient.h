@@ -8,10 +8,7 @@
 #include <stdio.h> //ChillerDragon sscanf
 
 #define CHILLERBOT_VERSION "0003"
-char aBotVersion[5] = {"0003"};
-
-#define BLMAPCHILL
-//#define CHILLBLOCK5
+char aBotVersion[5] = {CHILLERBOT_VERSION};
 
 class CFakeClient
 {
