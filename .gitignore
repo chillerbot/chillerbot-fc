@@ -3,12 +3,15 @@
 bam.exe
 /config.lua
 __pycache__/
+.vscode/
 *.pyc
 *.pyo
 scripts/work/
 /autoexec.cfg
-_test.exe
 src/game/generated/*
+objs/
 local.cfg
-chillerbot-FC-*.exe
+
+_test.exe
+chillerbot-FC-*
 PENTESTER_nogui.exe
