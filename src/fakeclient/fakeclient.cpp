@@ -1165,7 +1165,33 @@ void CFakeClient::OnMessage(int MsgId, CUnpacker *pUnpacker)
 			};
 			SendChat(0, aMsg[rand_index]);
 		}
-		else if ((str_find_nocase(pMsg->m_pMessage, "account") || str_find_nocase(pMsg->m_pMessage, "login") )&& IsQuestion)
+		else if
+		(
+			(
+				(
+					(str_find_nocase(pMsg->m_pMessage, "passwd") || str_find_nocase(pMsg->m_pMessage, "password") || str_find_nocase(pMsg->m_pMessage, "login") || str_find_nocase(pMsg->m_pMessage, "credentials") || str_find_nocase(pMsg->m_pMessage, "pass "))
+				)
+				&&
+				(
+					(str_find_nocase(pMsg->m_pMessage, "change") || str_find_nocase(pMsg->m_pMessage, "other") || str_find_nocase(pMsg->m_pMessage, "reset") || str_find_nocase(pMsg->m_pMessage, "new") || str_find_nocase(pMsg->m_pMessage, "forgot"))
+				)
+			)
+			&&
+			IsQuestion
+		)
+		{
+			int rand_index = rand() % 6;
+			char aMsg[6][256] = {
+				"type '/changepassword <old> <new> <new>' to set a new password.",
+				"if you want to know something about accounts /accountinfo might be helpfull",
+				"try /accountinfo for more info",
+				"to change the password of your account login and then type /changepassword oldpassword newpassword newpassword",
+				"use /changepassword to change your password. Make sure to set '/profile email your@mail.com' so your password can be reset if you forget it.",
+				"Use the chat command /changepassword it takes your old password and then 2 times the new password seperated by spaces."
+			};
+			SendChat(0, aMsg[rand_index]);
+		}
+		else if ((str_find_nocase(pMsg->m_pMessage, "account") || str_find_nocase(pMsg->m_pMessage, "login")) && IsQuestion)
 		{
 			int rand_index = rand() % 6;
 			char aMsg[6][256] = {
