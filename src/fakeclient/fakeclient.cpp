@@ -1427,6 +1427,10 @@ void CFakeClient::OnMessage(int MsgId, CUnpacker *pUnpacker)
 			str_format(aMathMsg[3], sizeof(aMathMsg[3]), "something between %d and %d", rand() % 30, rand() + 30);
 			SendChat(0, aMathMsg[rand_index]);
 		}
+		else if(str_find_nocase(pMsg->m_pMessage, "I was a faithful friend from the start. The best friend? No. But I was a faithful friend. From map to map, I helped jao get across hard barriers. We talked and talked, about the future, what teeworlds could hold. We had wonderful moments together, ..."))
+		{
+			SendChat(0, "... memories that would last a lifetime. Whenever I would see him on a server, a new journey would spark up as we explored the wonders of each map. And now? he won't fucking transfer my points");
+		}
 		else if (IsNameTrigger && IsQuestion)
 		{
 			int rand_index = rand() % 17;
@@ -1453,8 +1457,8 @@ void CFakeClient::OnMessage(int MsgId, CUnpacker *pUnpacker)
 		}
 		else if (IsNameTrigger)
 		{
-			int rand_index = rand() % 86;
-			char aRandMsg[88][256] = {
+			int rand_index = rand() % 89;
+			char aRandMsg[90][256] = {
 				"im a train", //0
 				"i like turtles", //1
 				"lol", //2
@@ -1490,59 +1494,61 @@ void CFakeClient::OnMessage(int MsgId, CUnpacker *pUnpacker)
 				"7login chillerbot png", // 32
 				"7register chillerbot png png", //33
 				" /gift chillerbot.png", //34
-				" /stats chillerbot.png", //34
-				"7cmdlist", //35
-				"dat sentence made like zer0 sense m8", //36
-				"i don't kehr", //37
-				"dies das annanass", //38
-				"<O.O>", //39
-				"twoj buduschtschíj musch", //40
-				"wer andern eine bratwurst brät...", //41
-				"wenn man dir tut was du nicht willst... das tu man nicht, was willst du denn!?", //42
-				"42", //43
-				"apt-get install chillerbot.png", //44
-				"that was almost funny.", //45
-				"mede me ha ha ha...", //46
-				"psst!", //47
-				"wanna trade?", //48
-				"f4 f4!!", //49
-				"f4 far!", //50
-				"go play /quest then oke?", //51
-				"me rus.", //52
-				"i am a human!", //53
-				"git push", //54
-				"#include <iostream>", //55
-				"for (bool foo = false; foo < 1; foo = !foo) { std::cout << foo << std::endl; }", //56
-				"2 3 6 8 0 ß ", //57
-				" 0u8dawdakwo dokawjdko awkodok", //58
-				"meaning of lyfe...", //59
-				"VOTE AGIANST VOTES!! ban bans!", //60
-				"i programmed ChillerDragon", //61
-				"i play much ESL im much wow pro!", //62
-				"come 1n1 i 10 0 starblock_baam", //63
-				"go 1on1 city", //64
-				"MoveLeft(); MoveRight(); MoveParty(); MoveStop();", //65
-				"EvilChick!", //66
-				"they'r coming 2 get u m8", //67
-				"1+0=1", //68
-				"does it even sense?", //69
-				"69", //70
-				".___.", //71
-				"yoooooo for sure...", //72
-				"do u play teewoods?", //73
-				"better install doodlejumpmoviemaker", //74
-				"me much brain... much wow", //75
-				"#include <stdlib.h>", //76
-				"the truth is ...", //77
-				"yes? did you say something?", //78
-				"be smart!", //79
-				"did you ask me to tell a joke?", //80
-				"you came for the daily jao sightings?", //81
-				"imagine a green dragon playing the guitar", //82
-				"priviet is russian for hello", //82
-				"zhit' is russian for life", //83
-				"google translate says smeshnoy means funny in english", //84
-				"make sure to subscribe Prudrugtiq on youtube c:" //85
+				" /stats chillerbot.png", //35
+				"7cmdlist", //36
+				"dat sentence made like zer0 sense m8", //37
+				"i don't kehr", //38
+				"dies das annanass", //39
+				"<O.O>", //40
+				"twoj buduschtschíj musch", //41
+				"wer andern eine bratwurst brät...", //42
+				"wenn man dir tut was du nicht willst... das tu man nicht, was willst du denn!?", //43
+				"42", //44
+				"apt-get install chillerbot.png", //45
+				"that was almost funny.", //46
+				"mede me ha ha ha...", //47
+				"psst!", //48
+				"wanna trade?", //49
+				"f4 f4!!", //50
+				"f4 far!", //51
+				"go play /quest then oke?", //52
+				"me rus.", //53
+				"i am a human!", //54
+				"git push", //55
+				"#include <iostream>", //56
+				"for (bool foo = false; foo < 1; foo = !foo) { std::cout << foo << std::endl; }", //57
+				"2 3 6 8 0 ß ", //58
+				" 0u8dawdakwo dokawjdko awkodok", //59
+				"meaning of lyfe...", //60
+				"VOTE AGIANST VOTES!! ban bans!", //61
+				"i programmed ChillerDragon", //62
+				"i play much ESL im much wow pro!", //63
+				"come 1n1 i 10 0 starblock_baam", //64
+				"go 1on1 city", //65
+				"MoveLeft(); MoveRight(); MoveParty(); MoveStop();", //66
+				"EvilChick!", //67
+				"they'r coming 2 get u m8", //68
+				"1+0=1", //69
+				"does it even sense?", //70
+				"69", //71
+				".___.", //72
+				"yoooooo for sure...", //73
+				"do u play teewoods?", //74
+				"better install doodlejumpmoviemaker", //75
+				"me much brain... much wow", //76
+				"#include <stdlib.h>", //77
+				"the truth is ...", //78
+				"yes? did you say something?", //79
+				"be smart!", //80
+				"did you ask me to tell a joke?", //81
+				"you came for the daily jao sightings?", //82
+				"imagine a green dragon playing the guitar", //83
+				"priviet is russian for hello", //84
+				"zhit' is russian for life", //85
+				"google translate says smeshnoy means funny in english", //86
+				"make sure to subscribe Prudrugtiq on youtube c:", //87
+				"I was a faithful friend from the start. The best friend? No. But I was a faithful friend. From map to map, I helped jao get across hard barriers. We talked and talked, about the future, what teeworlds could hold. We had wonderful moments together, ...", //88
+				"zooz" //89
 			};
 			SendChat(0, aRandMsg[rand_index]);
 		}
